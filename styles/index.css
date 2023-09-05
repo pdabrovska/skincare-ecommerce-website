@@ -8,7 +8,7 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 nav a{
@@ -17,40 +17,35 @@ nav a{
 }
 
 .title-section{
-  font-size: 26px;
+  font-size: 36px;
   display: flex;
   align-items: center;
-  margin-right: 40px;
-}
-
-.line{
-  width: 3px;
-  height: 45px;
-  background-color: rgb(110, 106, 106);
-  margin-left: 22px;
-}
-
-.middle-section{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
 }
 
 .right-section{
+  min-width: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+.cart{
   display: flex;
   align-items: center;
   justify-content: center;
-  column-gap: 3px;
+  background-color: rgb(43, 40, 40);
+  min-width: 45px;
+  height: 45px;
+  border-radius: 100px;
 }
 
-.right-section img{
-  width: 42px;
-  height: 42px;
+.cart img{
+  padding: 0;
+  margin: 0;
+  width: 24px;
+  height: 24px;
 }
 
-.cart-amount{
-  font-size: 15px;
-  position: absolute;
-  top: 19px;
+.burger{
+  display: none;
 }
