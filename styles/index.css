@@ -58,6 +58,18 @@ nav{
   cursor: pointer;
 }
 
+.burger div{
+  display: block;
+	height: 4px;
+	width: 30px;
+	margin-bottom: 4px;
+	position: relative;
+	background: #000000;
+	border-radius: 50px;
+	z-index: 1;
+	transition: transform 0.25s ease-out, opacity 0.15s ease-out;
+}
+
 .burger img{
   width: 30px;
   height: 33px;

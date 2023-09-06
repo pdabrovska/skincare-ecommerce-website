@@ -45,6 +45,16 @@
   }
 
   .burger{
-    display: flex;
+    display: inline-block;;
+  }
+
+  .close-menu #line1{
+    transform: translateY(8px) rotate(45deg);
+  }
+  .close-menu #line2{
+    opacity: 0;
+  }
+  .close-menu #line3{
+    transform: translateY(-8px) rotate(-45deg);
   }
 }
