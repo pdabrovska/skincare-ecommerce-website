@@ -2,16 +2,17 @@ body{
   font-family: 'Urbanist', sans-serif;
   padding: 0;
   margin: 0;
+  background-color: aliceblue;
 }
-nav{
-  margin: 0 80px;
+
+header{
+  padding: 0 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 20px;
 }
 
-nav a{
+header a{
   text-decoration: none;
   color: black;
 }
@@ -22,30 +23,42 @@ nav a{
   align-items: center;
 }
 
-.right-section{
-  min-width: 650px;
+nav{
+  font-size: 20px;
   display: flex;
+}
+
+.middle-section{
+  display: flex;
+  flex-direction: row;
+  min-width: 680px;
+  justify-content: space-between;
+}
+
+
+.right-section{
+  margin-left: 88px;
+  display: flex;
+  column-gap: 16px;
   align-items: center;
-  justify-content: space-between
+  z-index: 100;
 }
 
 .cart{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(43, 40, 40);
-  min-width: 45px;
-  height: 45px;
-  border-radius: 100px;
+  transition: opacity 0.19s linear;
 }
 
 .cart img{
-  padding: 0;
-  margin: 0;
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
 }
 
 .burger{
   display: none;
+  cursor: pointer;
+}
+
+.burger img{
+  width: 30px;
+  height: 33px;
 }
