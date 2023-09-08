@@ -1,4 +1,7 @@
 header{
+  position: absolute;
+  left: 0;
+  right: 0;
   padding: 0 80px;
   display: flex;
   align-items: center;
@@ -11,17 +14,18 @@ header a{
 }
 
 .title-section{
+  font-weight: 700;
   font-size: 36px;
   display: flex;
   align-items: center;
 }
 
 .title-section p{
-  margin-top: 30px;
+  margin: 13px 0 15px 0;
 }
 
 nav{
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
 }
 
@@ -32,8 +36,28 @@ nav{
   justify-content: space-between;
 }
 
+.middle-section a{
+  position: relative;
+  
+}
+
+.middle-section a:before{
+  content: '';
+  position: absolute;
+  background-color: #000000;
+  width: 0;
+  height: 2px;
+  bottom: 14px;
+  left: -3px;
+  transition: width 0.3s ease;
+}
+
+.middle-section a:hover::before{
+  width: 110%;
+}
 
 .right-section{
+  margin-top: 6px;
   margin-left: 88px;
   display: flex;
   column-gap: 16px;
@@ -49,6 +73,12 @@ nav{
   width: 28px;
   height: 28px;
 }
+
+.cart img:hover{
+  width: 30px;
+  height: 30px;
+}
+
 
 .burger{
   display: none;
@@ -67,9 +97,9 @@ nav{
 	transition: transform 0.25s ease-out, opacity 0.15s ease-out;
 }
 
-.burger img{
-  width: 30px;
-  height: 33px;
+.burger:hover div{
+  height: 4px;
+	width: 32px;
 }
 
 /*responsive-design*/
@@ -120,6 +150,7 @@ nav{
     position: absolute;
     right: 0px;
     left: 40%;
+    height: 95vh;
     top: 0;
     bottom: 0;
     display: flex;
