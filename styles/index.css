@@ -172,12 +172,65 @@ body{
   height: auto;
 }
 
-/*Contact*/
+/*footer*/
 footer{
   display: flex;
   background-color: rgb(18, 18, 18);
+  padding: 40px 20px;
+  justify-content: center;
+  gap: 50px;
 }
 
+.footer{
+  color: rgb(251, 251, 251);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer p{
+  text-align: center;
+  max-width: 500px;
+}
+
+.social-media{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10px;
+}
+
+.social-media img{
+  cursor: pointer;
+  width: 40px;
+  height: auto;
+}
+
+.contact-info{
+  display: flex;
+  gap: 20px;
+}
+
+.footer span{
+  display: flex;
+  align-items: center;
+}
+
+.footer span img{
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+#footer-logo{
+  font-size: 26px;
+  font-weight: 600;
+}
+
+#footer-logo, #footer-info{
+  margin: 5px;
+}
+/*Contact*/
 .contact p{
   color: rgb(251, 251, 251);
   font-size: 22px;
