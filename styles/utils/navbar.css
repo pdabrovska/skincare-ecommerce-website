@@ -144,13 +144,14 @@ nav{
   }
 
   .middle-section{
+    z-index: 100;
     min-width: 200px;
     backdrop-filter: blur(15px);
     padding-top: 30px;
     position: absolute;
     right: 0px;
     left: 40%;
-    height: 95vh;
+    height: 98vh;
     top: 0;
     bottom: 0;
     display: flex;

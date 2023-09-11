@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   font-family: 'Urbanist', sans-serif;
   padding: 0;
@@ -30,7 +34,7 @@ body{
 
 .slide img{
   width: 100%;
-  height:500px;
+  height: 100%;
 }
 
 .navigation-manual{
@@ -106,4 +110,64 @@ body{
 
 #radio4:checked ~ .navigation-auto .auto-btn4{
   background: beige;
+}
+
+/*why us*/
+.statistics{
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 5px;
+}
+
+.statistics div{
+  text-align: center;
+  letter-spacing:1px;
+}
+
+.statistics div p:first-child{
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 1px;
+}
+
+.statistics div p:last-child{
+  margin-top: 5px;
+  font-size: 13px
+}
+
+.why-us{
+  background-color: rgb(249, 249, 249);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 10px;
+}
+
+.why-us p:first-child{
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0px;
+}
+
+.why-us p{
+  max-width: 800px;
+}
+
+.why-us div{
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media only screen and (min-width: 1030px){
+  .why-us div{
+    width: 800px;
+  }
+}
+
+.why-us div img{
+  width: 110px;
+  height: auto;
 }

@@ -7,5 +7,17 @@ export function navbar(){
     menu.classList.toggle('close-menu');
     navbar.classList.toggle('open');
     cart.classList.toggle('non-visible');
+
+    document.querySelector('.js-about-us').addEventListener('click',()=>{
+      menu.classList.toggle('close-menu');
+      navbar.classList.toggle('open');
+      cart.classList.toggle('non-visible');
+    });
+
+    document.querySelector('.js-contact').addEventListener('click',()=>{
+      menu.classList.toggle('close-menu');
+      navbar.classList.toggle('open');
+      cart.classList.toggle('non-visible');
+    });
   }
 };
