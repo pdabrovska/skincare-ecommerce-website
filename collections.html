@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Nacomi</title>
+    <title>aaBeauty</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,12 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Urbanist:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/collections.css">
     <link rel="stylesheet" href="styles/utils/navbar.css">
+    <link rel="stylesheet" href="styles/utils/footer.css">
   </head>
   <body>
     <header>
       <div class="title-section">
         <a href="index.html">
-          <p>Nacomi</p>
+          <p>aaBeauty</p>
         </a>
       </div>
       <nav>
@@ -32,7 +33,7 @@
           <a href="index.html#about-us" class="js-about-us">
             <p>About us</p>
           </a>
-          <a href="index.html#contact" class="js-contact">
+          <a href="#contact" class="js-contact">
             <p>Contact</p>
           </a>
         </div>
@@ -50,6 +51,38 @@
         </div>
       </nav>
     </header>
+
+    <footer>
+      <div class="footer">
+        <div class="social-media">
+          <img src="images/facebook.png">
+          <img src="images/instagram.png">
+          <img src="images/pinterest.png">
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+        <div class="contact-info">
+          <span>
+            <img src="images/phone.png">
+            <p>607 567 234</p>
+          </span>
+          <span>
+            <img src="images/email.png">
+            <p>aabeauty@shop.com</p>
+          </span>
+        </div>
+        <p id="footer-logo">aaBeauty</p>
+        <p id="footer-info">Poland | E</p>
+      </div>
+      <div class="contact" id="contact">
+        <p>Contact us</p>
+        <form>
+          <input type="text" placeholder="Your Name">
+          <input type="email" placeholder="Your email">
+          <textarea type="text" placeholder="Share your thoughts"></textarea>
+          <button type="submit">SHARE YOUR FEEDBACK</button>
+        </form>
+      </div>
+    </footer>
     <script type="module" src="scripts/collections.js"></script>
   </body>
 </html>
