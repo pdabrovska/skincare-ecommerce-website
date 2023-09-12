@@ -16,18 +16,20 @@ setInterval(()=>{
 //product carousel
 
 const carousel = document.querySelector('.js-products-container');
-//firstImg = carousel.querySelectorAll('.product-card')[0];
-const arrowIcons = document.querySelectorAll('.js-arrow');
-
+let firstImg = carousel.querySelectorAll('.product-card')[0];
+const arrowIconLeft = document.querySelector('.js-arrow-left');
+const arrowIconLRight = document.querySelector('.js-arrow-right');
 let isDragStart = false, prevPageX, prevScrollLeft;
-//let firstImgWidth = firstImg.clientWidth + 25;
-/*
-arrowIcons.forEach( icon =>{
-  icon.addEventListener('click', ()=>{
-    carousel.scrollLeft
-  });
+let firstImgWidth = firstImg.clientWidth + 25;
+
+arrowIconLeft.addEventListener('click', ()=>{
+    carousel.scrollLeft +=  -firstImgWidth;
 });
-*/
+
+arrowIconLRight.addEventListener('click', ()=>{
+  carousel.scrollLeft +=  firstImgWidth;
+});
+
 const dragStart = (e) => {
   isDragStart = true;
   prevPageX = e.pageX || e.touches[0].pageX;
@@ -37,12 +39,14 @@ const dragStart = (e) => {
 const dragging = (e) => {
   if(!isDragStart) return;
   e.preventDefault();
+  carousel.classList.add('dragging');
   let positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
   carousel.scrollLeft = prevScrollLeft - positionDiff;
 };
 
 const dragStop = () => {
   isDragStart = false;
+  carousel.classList.remove('dragging');
 }
 
 carousel.addEventListener('mousedown', dragStart);
