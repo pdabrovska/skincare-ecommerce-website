@@ -98,3 +98,20 @@ form button{
 form button:hover{
   background-color: rgb(226, 225, 225);
 }
+
+@media only screen and (max-width: 500px){
+  input, textarea, form button{
+    width: 90vw;
+  }
+
+  .contact-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
+
+  .contact-info p{
+    margin: 5px;
+  }
+}

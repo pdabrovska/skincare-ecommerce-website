@@ -141,6 +141,26 @@ body{
   font-size: 13px
 }
 
+@media only screen and (max-width: 400px){
+  .statistics div p:first-child{
+    font-size: 70%;
+  }
+  
+  .statistics div p:last-child{
+    font-size: 60%;
+  }
+}
+
+@media only screen and (max-width: 300px){
+  .statistics{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+    column-gap: 2px;
+  }
+}
+
+
 .why-us{
   background-color: rgb(255, 252, 251);
   text-align: center;
@@ -176,6 +196,13 @@ body{
 .why-us div img{
   width: 110px;
   height: auto;
+}
+
+@media only screen and (max-width: 500px){
+  .why-us div img{
+    width: 20vw;
+    height: auto;
+  }
 }
 
 /*filter*/

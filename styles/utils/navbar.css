@@ -202,6 +202,15 @@ nav{
     padding: 0 15px;
   }
 
+  .title-section{
+    font-size: 150%;
+  }
+
+  .cart img{
+    width: 20px;
+    height: 20px;
+  }
+
   .right-section{
     margin-left: 25px
   }
