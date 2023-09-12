@@ -59,6 +59,18 @@ body{
   padding: 1vw 2vw;
   cursor: pointer;
   font-size: 4vw;
+  margin-top: 8px;
+}
+
+.slide-info button:hover{
+  background: rgba(255, 251, 251, 0.841);
+  transition: background-color 0.55s ease-out;
+}
+
+@media only screen and (min-width: 750px){
+  .slide-info button{
+    font-size: 28px;
+  }
 }
 /*slides info*/
 #slide1{
@@ -346,6 +358,11 @@ body{
   position: relative;
 }
 
+.container:hover, .right-image:hover{
+  font-size: 17px;
+  transition: font-size 0.3s linear;
+}
+
 .container a, .right-image a{
   position: absolute;
   text-decoration: none;
@@ -382,4 +399,45 @@ body{
     font-size: 12px;
     gap: 5px;
   }
+
+  .container:hover, .right-image:hover{
+    font-size: 13px;
+    transition: font-size 0.3s linear;
+  }
+}
+
+/*Bestsellers*/
+
+.bestsellers{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.bestsellers #title{
+  width: 820px;
+  font-weight: 600;
+  font-size: 28px;
+  margin-top: 0;
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.wrapper-arrow{
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.products-container{
+  max-width: 830px;
+  display: flex;
+  gap: 25px;
+  padding: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
 }
