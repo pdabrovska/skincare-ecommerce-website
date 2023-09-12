@@ -11,4 +11,4 @@ setInterval(()=>{
   if(counter > 4){
     counter = 1;
   }
-}, 5000);
+}, 10000);
