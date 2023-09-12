@@ -43,6 +43,70 @@ body{
 .slide{
   width: 20%;
   transition: 2s;
+  position: relative;
+}
+
+.slide-info{
+  position: absolute;
+}
+
+.slide-info p{
+  margin: 0;
+}
+
+.slide-info button{
+  background: none;
+  padding: 1vw 2vw;
+  cursor: pointer;
+  font-size: 4vw;
+}
+/*slides info*/
+#slide1{
+  bottom: 7vw;
+  left: 3vw;
+}
+
+#slide1 .s-title{
+  font-size: 5vw;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+#face{
+  top: 12vh;
+  left: 3vw;
+}
+
+#face .s-title{
+  font-size: 5vw;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+#face .s-info{
+  font-weight: 500;
+  font-size: 3vw;
+  margin-bottom: 8px;
+}
+
+#body{
+  bottom: 7vw;
+  left: 3vw;
+}
+
+#body .s-title{
+  font-size: 5vw;
+  font-weight: 600;
+}
+
+#body .s-info{
+  font-weight: 500;
+  font-size: 4vw;
+  margin-top: 8px;
+}
+
+#body button{
+  margin-top: 2vh;
 }
 
 .slide img{
@@ -59,11 +123,15 @@ body{
 }
 
 .manual-btn{
-  border: 2px solid black;
+  background-color: rgba(190, 178, 163, 0.4);
+  width: 4px;
+  height: 4px;
+  border: none;
   padding: 5px;
   border-radius: 10px;
   cursor: pointer;
   transition: 1s;
+  z-index: 2;
 }
 
 .manual-btn:not(:last-child){
@@ -100,10 +168,14 @@ body{
 }
 
 .navigation-auto div{
-  border: 2px solid black;
+  border: none;
+  background-color: rgba(190, 178, 163, 0.4);
+  width: 4px;
+  height: 4px;
   padding: 5px;
   border-radius: 10px;
   transition: 1s;
+  z-index: 1;
 }
 
 .navigation-auto div:not(:last-child){
@@ -124,6 +196,34 @@ body{
 
 #radio4:checked ~ .navigation-auto .auto-btn4{
   background: beige;
+}
+
+@media only screen and (max-width: 380px){
+  .navigation-auto div:not(:last-child){
+    margin-right: 15px;
+  }
+  .manual-btn:not(:last-child){
+    margin-right: 15px;
+  }
+
+  .navigation-auto{
+    bottom: 10px;
+  }
+
+  .navigation-manual{
+    margin-top: -17px;
+  }
+
+  .navigation-auto div{
+    padding: 2px;
+    border-radius: 10px;
+  }
+
+  .manual-btn{
+    padding: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
 }
 
 /*why us*/
@@ -176,7 +276,7 @@ body{
 
 
 .why-us{
-  background-color: rgb(255, 252, 251);
+  /*background-color: rgb(255, 252, 251);*/
   text-align: center;
   display: flex;
   align-items: center;

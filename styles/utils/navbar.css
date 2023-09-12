@@ -114,7 +114,7 @@ nav{
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1030px) {
   header{
     padding: 0 30px 0 80px;
     display: flex;
@@ -131,7 +131,7 @@ nav{
   }
 }
 
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 835px) {
   header{
     padding: 0 25px 0 40px;
   }
@@ -160,11 +160,13 @@ nav{
     justify-content: flex-start;
     align-items: center;
     row-gap: 1em;
+    visibility: hidden;
     opacity: 0;
-    transition: opacity 0.25s linear;
+    transition: visibility 0.25s linear, opacity 0.25s linear;
   }
 
   .open{
+    visibility: visible;
     opacity: 1;
   }
 
