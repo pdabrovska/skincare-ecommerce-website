@@ -20,7 +20,8 @@ let firstImg = carousel.querySelectorAll('.product-card')[0];
 const arrowIconLeft = document.querySelector('.js-arrow-left');
 const arrowIconLRight = document.querySelector('.js-arrow-right');
 let isDragStart = false, prevPageX, prevScrollLeft;
-let firstImgWidth = firstImg.clientWidth + 25;
+
+let firstImgWidth = window.matchMedia("(max-width: 290)") ? firstImg.clientWidth + 12 : (window.matchMedia("(max-width: 425)") ? firstImg.clientWidth + 20 : firstImg.clientWidth + 30);
 
 arrowIconLeft.addEventListener('click', ()=>{
     carousel.scrollLeft +=  -firstImgWidth;
