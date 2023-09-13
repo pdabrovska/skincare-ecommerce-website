@@ -1,4 +1,5 @@
-import { navbar } from "./utils/general.js";
+import { products } from "../data/products.js";
+import { generateProducts, navbar } from "./utils/general.js";
 
 navbar();
 
@@ -13,8 +14,11 @@ setInterval(()=>{
   }
 }, 15000);
 
-//product carousel
+//products generator
 
+generateProducts(products, 'bestseller');
+
+//product carousel
 const carousel = document.querySelector('.js-products-container');
 let firstImg = carousel.querySelectorAll('.product-card')[0];
 const arrowIconLeft = document.querySelector('.js-arrow-left');
