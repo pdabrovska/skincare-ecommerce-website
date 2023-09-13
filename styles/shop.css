@@ -23,9 +23,25 @@ main{
   border: 1px solid black;
   border-radius: 2px;
   padding: 15px 30px;
+  position: relative;
 }
 
-@media only screen and (max-width: 630px){
+.reset-btn{
+  position: absolute;
+  bottom: 2%;
+  right: 3px;
+  background: none;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.reset-btn:hover{
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 775px){
   .filters-container{
     padding: 15px 5px;
   }
@@ -34,7 +50,7 @@ main{
 .filter-heading{
   position: absolute;
   top: -60px;
-  left: 40%;
+  left: 42%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,7 +67,8 @@ main{
   margin: 0;
 }
 
-.clean-filters{
+.close-filters{
+  display: none;
   background: none;
   border: none;
   font-size: 20px;
@@ -136,4 +153,48 @@ main{
   gap: 25px;
   grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
   max-width: 80vw;
+}
+
+/*filter 775px*/
+@media only screen and (max-width: 695px){
+  .filter-buttons{
+    flex-wrap: wrap;
+  }
+
+  .filters-container{
+    margin: 0 10%;
+  }
+
+  .filter-heading{
+    left: -1%;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  .close-filters{
+    display: block;
+  }
+
+  .filter-heading{
+    position: static;
+    border: none;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    padding-top: 0;
+  }
+
+  .input-container p{
+    font-size: 15px;
+  }
+
+  .input-container{
+    display: flex;
+    position: relative;
+    padding: 10px 15px;
+  }
+
+  .filters-container{
+    padding: 15px 0px;
+  }
 }

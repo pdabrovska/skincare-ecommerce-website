@@ -59,9 +59,17 @@
           <div class="filter-buttons">
             <div class="filter-heading">
               <p>FILTER</p>
-              <button class="clean-filters js-clean-filters">x</button>
+              <button class="close-filters js-close-filters">x</button>
             </div>
-            <input type="radio" id="body" name="filter-button" value="body">
+            <input type="radio" id="all" name="filter-button" value="all" checked="checked">
+            <label for="all">
+              <div class="input-container">
+                <p>All</p>
+                <div class="vertical-line"></div>
+                <div class="horizontal-line"></div>
+              </div>
+            </label>
+            <input type="radio" id="body" name="filter-button" value="body" class="js-body-products">
             <label for="body">
               <div class="input-container">
                 <p>Body</p>
@@ -104,6 +112,7 @@
           <!--div class="price-range-container">
             <p>Price range:</p>
           </div-->
+          <button class="reset-btn">Reset</button>
         </div>
       </section>
       <section class="products">
