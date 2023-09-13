@@ -34,7 +34,7 @@ export const products = [
   {
     name: 'aaFace Tonic',
     price: 2599,
-    img: "images/products-images/aaInnovation-cream.jpg",
+    img: "images/products-images/tonic.jpg",
     badge: 'none',
     id: 'xxx01',
     section: 'face',

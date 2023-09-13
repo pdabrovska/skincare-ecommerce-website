@@ -359,7 +359,7 @@ body{
 }
 
 .container:hover, .right-image:hover{
-  font-size: 17px;
+  font-size: 18px;
   transition: font-size 0.3s linear;
 }
 
@@ -395,14 +395,12 @@ body{
     height: auto;
   }
 
-  .container span, .right-image span{
+  .container, .right-image{
     font-size: 12px;
-    gap: 5px;
   }
 
   .container:hover, .right-image:hover{
-    font-size: 13px;
-    transition: font-size 0.3s linear;
+    font-size: 14px;
   }
 }
 

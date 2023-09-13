@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="styles/shop.css">
     <link rel="stylesheet" href="styles/utils/navbar.css">
     <link rel="stylesheet" href="styles/utils/footer.css">
-    <link rel="stylesheet" href="styles/utils/product-cart.css">
+    <link rel="stylesheet" href="styles/utils/product-card.css">
   </head>
   <body>
     <header>
@@ -52,8 +52,66 @@
         </div>
       </nav>
     </header>
-    <div class="products-container js-products-container">
-    </div>
+
+    <main>
+      <section class="filters">
+        <div class="filters-container">
+          <div class="filter-buttons">
+            <div class="filter-heading">
+              <p>FILTER</p>
+              <button class="clean-filters js-clean-filters">x</button>
+            </div>
+            <input type="radio" id="body" name="filter-button" value="body">
+            <label for="body">
+              <div class="input-container">
+                <p>Body</p>
+                <div class="vertical-line"></div>
+                <div class="horizontal-line"></div>
+              </div>
+            </label>
+            <input type="radio" id="face" name="filter-button" value="face">
+            <label for="face">
+              <div class="input-container">
+                <p>Face</p>
+                <div class="vertical-line"></div>
+                <div class="horizontal-line"></div>
+              </div>
+            </label>
+            <input type="radio" id="serums" name="filter-button" value="serums">
+            <label for="serums">
+              <div class="input-container">
+                <p>Serums</p>
+                <div class="vertical-line"></div>
+                <div class="horizontal-line"></div>
+              </div>
+            </label>
+            <input type="radio" id="moisturizers" name="filter-button" value="moisturizers">
+            <label for="moisturizers">
+              <div class="input-container">
+                <p>Moisturizers</p>
+                <div class="vertical-line"></div>
+                <div class="horizontal-line"></div>
+              </div>
+            </label>
+            <input type="radio" id="makeup" name="filter-button" value="makeup">
+            <label for="makeup">
+              <div class="input-container">
+                <p>Makeup</p>
+                <div class="horizontal-line"></div>
+              </div>
+            </label>
+          </div>
+          <!--div class="price-range-container">
+            <p>Price range:</p>
+          </div-->
+        </div>
+      </section>
+      <section class="products">
+        <div class="products-container js-products-container">
+        </div>
+      </section>
+    </main>
+
     <footer>
       <div class="footer">
         <div class="social-media">

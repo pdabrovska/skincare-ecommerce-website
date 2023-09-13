@@ -3,4 +3,124 @@ body{
   padding: 0;
   margin: 0;
   background-color: aliceblue;
+  background-color: rgb(255, 255, 255);
+}
+
+.filters{
+  padding-top: 150px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.filters-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 15px 30px;
+}
+
+.filter-heading{
+  position: absolute;
+  top: -60px;
+  left: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  border-radius: 2px 2px 0px 0px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
+  padding: 10px 13px;
+  width: max-content;
+  z-index: 30;
+}
+
+.filter-heading p{
+  font-size: 20px;
+  margin: 0;
+}
+
+.clean-filters{
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 8px;
+  margin-top: -2px;
+}
+
+.filter-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.filter-buttons input[type=radio]{
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.filter-buttons input[type=radio] + label{
+  cursor: pointer;
+}
+
+.input-container{
+  display: flex;
+  position: relative;
+  padding: 12px 25px;
+}
+
+.input-container p{
+  margin: 0;
+  font-size: 18px;
+}
+
+.vertical-line{
+  position: absolute;
+  top: 28%;
+  bottom: 28%;
+  right: 0;
+  width: .1px;
+  background-color: rgba(25, 24, 24, 0.407);
+}
+
+.horizontal-line{
+  position: absolute;
+  bottom: 17%;
+  right: 90%;
+  left: 10%;
+  height: 2px;
+  background-color: rgba(25, 24, 24, 0.707);
+  border-radius: 5px;
+  transition: right 0.3s linear;
+}
+
+.filter-buttons input[type=radio]:not(:checked):hover + label .horizontal-line{
+  right: 10%;
+}
+
+
+.filter-buttons input[type=radio]:checked + label{
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.filter-buttons input[type=radio]:checked + label .horizontal-line{
+  right: 10%;
+}
+
+
+/*products*/
+
+.products-container{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
 }
