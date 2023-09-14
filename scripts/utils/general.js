@@ -31,7 +31,7 @@ export function generateProducts(products, whatBadge){
   let carouselHTML = ''
 
   products.forEach(product => {
-    const {img, name, price, id, badge} = product;
+    const {img, name, price, id, badge, section, keywords} = product;
 
     if(badge === whatBadge){
       const html = `
@@ -54,6 +54,46 @@ export function generateProducts(products, whatBadge){
       carouselHTML += html;
     }
     if(whatBadge === 'every'){
+      const html = `
+      <div class="product-card">
+        <div class="product-img">
+          <img src=${img}>
+        </div>
+        <div class="product-info">
+          <p class="product-name">${name}</p>
+          <div class="buy-container">
+            <p class="price">$${formatCurrency(price)}</p>
+            <button class="js-add-to-cart add-to-cart" data-product-id="${id}">
+              <img src="images/cart-white.png">
+            </button>
+          </div>
+        </div>
+      </div>
+      `;
+
+      carouselHTML += html;
+    }
+    if(section === whatBadge){
+      const html = `
+      <div class="product-card">
+        <div class="product-img">
+          <img src=${img}>
+        </div>
+        <div class="product-info">
+          <p class="product-name">${name}</p>
+          <div class="buy-container">
+            <p class="price">$${formatCurrency(price)}</p>
+            <button class="js-add-to-cart add-to-cart" data-product-id="${id}">
+              <img src="images/cart-white.png">
+            </button>
+          </div>
+        </div>
+      </div>
+      `;
+
+      carouselHTML += html;
+    }
+    if(keywords === whatBadge){
       const html = `
       <div class="product-card">
         <div class="product-img">

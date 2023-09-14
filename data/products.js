@@ -6,6 +6,7 @@ export const products = [
     badge: 'bestseller',
     id: 'xxx01',
     section: 'face',
+    keywords: 'moisturizers',
   },
   {
     name: 'aaUltra Serum',
@@ -14,6 +15,7 @@ export const products = [
     badge: 'bestseller',
     id: 'xxx02',
     section: 'face',
+    keywords: 'serums',
   },
   {
     name: 'aaNiacynamid Serum',
@@ -22,6 +24,7 @@ export const products = [
     badge: 'none',
     id: 'ss01',
     section: 'face',
+    keywords: 'serums',
   },
   {
     name: 'aaHyaluronic Serum',
@@ -30,6 +33,7 @@ export const products = [
     badge: 'none',
     id: 'ss02',
     section: 'face',
+    keywords: 'serums',
   },
   {
     name: 'aaNight Cream',
@@ -38,6 +42,7 @@ export const products = [
     badge: 'bestseller',
     id: 'xxx03',
     section: 'face',
+    keywords: 'moisturizers',
   },
   {
     name: 'aaEye Cream',
@@ -46,6 +51,7 @@ export const products = [
     badge: 'bestseller',
     id: 'xxx04',
     section: 'face',
+    keywords: 'moisturizers',
   },
   {
     name: 'aaFace Tonic',
@@ -94,5 +100,6 @@ export const products = [
     badge: 'none',
     id: 'bb03',
     section: 'body',
+    keywords: 'moisturizers',
   },
 ];
