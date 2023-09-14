@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 body{
   font-family: 'Urbanist', sans-serif;
   padding: 0;
@@ -19,6 +23,7 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: fit-content;
   border: 1px solid black;
   border-radius: 2px;
