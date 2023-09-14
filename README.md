@@ -1,4 +1,4 @@
 # skincare-website
 
 ## Demo link:
-Access my site at https://pdabrovska.github.io/got-gwent/
+Access my site at https://pdabrovska.github.io/skincare-ecommerce-website/
