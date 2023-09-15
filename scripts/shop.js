@@ -17,11 +17,6 @@ filterBtn.forEach(button =>{
   });
 });
 
-resetBtn.addEventListener('click', ()=>{
-  generateProducts(products, 'every');
-  document.querySelector('input[name="filter-button"][id="all"]').checked = true;
-});
-
 //price range
 
 window.onload = function(){
@@ -74,3 +69,14 @@ function setArea(){
   range.style.right = 100- (maxVal.value / sliderMaxValue) * 100 + '%';
   maxTooltip.style.right = 100- (maxVal.value / sliderMaxValue) * 100 + '%';
 }
+
+
+//reset button
+resetBtn.addEventListener('click', ()=>{
+  generateProducts(products, 'every');
+  document.querySelector('input[name="filter-button"][id="all"]').checked = true;
+  minVal.value = 0;
+  maxVal.value = 120;
+  slideMin();
+  slideMax();
+});
