@@ -26,7 +26,7 @@ export function formatCurrency(priceCents){
   return (priceCents / 100).toFixed(2);
 }
 
-export function generateProducts(products, whatBadge){
+export function generateProducts(products, whatBadge, minPrice, maxPrice){
   const carousel = document.querySelector('.js-products-container');
   let carouselHTML = ''
 
@@ -53,7 +53,7 @@ export function generateProducts(products, whatBadge){
 
       carouselHTML += html;
     }
-    if(whatBadge === 'every'){
+    if(whatBadge === 'every' && (price / 100 >= minPrice && price /100 <= maxPrice)){
       const html = `
       <div class="product-card">
         <div class="product-img">
@@ -73,7 +73,7 @@ export function generateProducts(products, whatBadge){
 
       carouselHTML += html;
     }
-    if(section === whatBadge){
+    if(section === whatBadge && (price / 100 >= minPrice && price /100 <= maxPrice)){
       const html = `
       <div class="product-card">
         <div class="product-img">
@@ -93,7 +93,7 @@ export function generateProducts(products, whatBadge){
 
       carouselHTML += html;
     }
-    if(keywords === whatBadge){
+    if(keywords === whatBadge && (price / 100 >= minPrice && price /100 <= maxPrice)){
       const html = `
       <div class="product-card">
         <div class="product-img">

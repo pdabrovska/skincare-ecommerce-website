@@ -95,7 +95,7 @@ export const products = [
   },
   {
     name: 'aaHand Cream',
-    price: 1499,
+    price: 5099,
     img: "images/products-images/hand-cream.jpg",
     badge: 'none',
     id: 'bb03',
