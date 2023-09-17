@@ -2,13 +2,33 @@ import { navbar, generateProducts } from "./utils/general.js";
 import { products } from "../data/products.js";
 
 navbar();
+openCloseFilters();
 
 function whichSection(){
   let section = document.querySelector('input[type=radio]:checked').value;
   return section
 };
 
-console.log(whichSection());
+function openCloseFilters(){
+  const filterMenu = document.querySelector('.js-open-close-filters');
+  const filters = document.querySelectorAll('.input-container');
+  const priceRange = document.querySelector('.price-range-container');
+  const resetBtn = document.querySelector('.js-reset-btn');
+
+  filterMenu.onclick = () => {
+    filters.forEach(filter =>{
+      filter.classList.toggle('close-filters');
+    });
+    priceRange.classList.toggle('close-filters');
+    resetBtn.classList.toggle('close-filters');
+
+    if(priceRange.classList.contains('close-filters')){
+      document.getElementById('filters-icon').src = 'images/x-close.png';
+    } else{
+      document.getElementById('filters-icon').src = 'images/filters-open.png';
+    }
+  };
+}
 
 //price range
 const minVal = document.querySelector('.min-val');

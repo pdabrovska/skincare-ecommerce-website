@@ -17,6 +17,7 @@ main{
 .filters{
   display: flex;
   justify-content: center;
+  height: auto;
 }
 
 .filters-container{
@@ -72,14 +73,15 @@ main{
   margin: 0;
 }
 
-.close-filters{
+.open-close-filters{
   display: none;
   background: none;
   border: none;
-  font-size: 20px;
   cursor: pointer;
-  margin-left: 8px;
-  margin-top: -2px;
+}
+
+.open-close-filters img{
+ width: 25px;
 }
 
 .filter-buttons{
@@ -160,6 +162,32 @@ main{
   max-width: 80vw;
 }
 
+@media only screen and (max-width: 612px){
+  .products-container{
+    gap: 5px;
+    max-width: 95vw;
+    padding: 0 1%;
+  }
+}
+
+@media only screen and (max-width: 510px){
+  .products-container{
+    gap: 3vw;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    max-width: 95vw;
+  }
+}
+
+@media only screen and (max-width: 305px){
+  .products-container{
+    gap: 1vw;
+    row-gap: 2vh;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    max-width: 95vw;
+    padding: 0 1%;
+  }
+}
+
 /*filter 775px*/
 @media only screen and (max-width: 695px){
   .filter-buttons{
@@ -206,7 +234,7 @@ main{
 
 /*price slider*/
 .price-range-container{
-  padding-bottom: 30px;
+  padding-bottom: 5px;
   width: 100%;
   display: flex;
   flex-direction: column;

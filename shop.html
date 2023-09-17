@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/utils/navbar.css">
     <link rel="stylesheet" href="styles/utils/footer.css">
     <link rel="stylesheet" href="styles/utils/product-card.css">
+    <link rel="stylesheet" href="styles/utils/filter-mobile-style.css">
   </head>
   <body>
     <header>
@@ -60,7 +61,9 @@
           <div class="filter-buttons">
             <div class="filter-heading">
               <p>FILTER</p>
-              <button class="close-filters js-close-filters">x</button>
+              <button class="open-close-filters js-open-close-filters">
+                <img id="filters-icon" src="images/filters-open.png">
+              </button>
             </div>
             <input type="radio" id="all" name="filter-button" value="every" checked="checked" class="js-filter-btn js-all">
             <label for="all">
