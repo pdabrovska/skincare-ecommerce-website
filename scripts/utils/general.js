@@ -159,4 +159,5 @@ export function updateCartAmount(cart){
   })
 
   document.querySelector('.cart-amount').innerHTML = cartAmount;
+  return cartAmount
 }
