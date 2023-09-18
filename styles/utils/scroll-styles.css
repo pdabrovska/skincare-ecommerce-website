@@ -1,0 +1,19 @@
+.cart-items::-webkit-scrollbar, ::-webkit-scrollbar{
+  background-color: rgba(39, 34, 34, 0.037);
+  width: 10px;
+  border-radius: 5px;
+}
+
+.cart-items::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb{
+  background-color: rgba(31, 31, 30, 0.353);
+  border-radius: 5px;
+  width: 10px;
+}
+
+.cart-items::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:hover{
+  background-color: rgba(31, 31, 30, 0.249);
+}
+
+::-webkit-scrollbar, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:hover{
+  width: 12px;
+}
