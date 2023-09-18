@@ -39,17 +39,33 @@ function generateCart(){
               <span>
                 <form class="quantity-form">
                   <p>Quantity:</p>
-                  <select name="quantity" id="quantity">
-                    <option value="">${quantity}</option>
+                  <select name="quantity" class="js-quantity-${id}" id="quantity">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
                   </select> 
                 </form>
               </span>
               <span>
                 <p>Total:</p>
-                <p>$${formatCurrency(price*quantity)}</p>
+                <p class="js-product-total-${id}">$${formatCurrency(price*quantity)}</p>
               </span>
             </div>
             <button class="delete-product" data-product-id="${id}">
@@ -111,3 +127,49 @@ function updateCartPage(){
   updateProductsTotal();
   updateTotal();
 }
+
+selectorDefaultQuantity();
+
+function selectorDefaultQuantity(){
+  cart.forEach(item =>{
+    const {productId, quantity} = item;
+    if(quantity > 20){
+      document.querySelector(`.js-quantity-${productId}`).innerHTML += `<option value="more">${quantity}</option>`;
+      document.querySelector(`.js-quantity-${productId}`).selectedIndex = `${quantity - 1}`;
+    } else{
+      document.querySelector(`.js-quantity-${productId}`).selectedIndex = `${quantity - 1}`;
+    }
+  })
+};
+
+selectQuantity();
+
+function selectQuantity(){
+  cart.forEach(item =>{
+    const {productId} = item;
+    const itemQuantity = item.quantity;
+      document.querySelectorAll(`.js-quantity-${productId}`).forEach(option => {
+        option.addEventListener('click', ()=>{
+          item.quantity = option.selectedIndex + 1;
+
+          if(itemQuantity !== item.quantity){
+            console.log(2)
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartAmount(cart);
+            document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
+            updateProductsTotal();
+            updateTotal();
+
+            let cartPrice;
+            products.forEach(product =>{
+              if(product.id === productId){
+                cartPrice = product.price;
+              }
+            })
+            document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
+          }
+        });
+      });
+  })
+};
+
