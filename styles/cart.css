@@ -118,6 +118,7 @@ main{
 .product-img{
   margin: auto;
   width: 140px;
+  height: 150px;
   border-radius: 5px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
 }
@@ -260,7 +261,7 @@ main{
 
   .product-card{
     width: 85vw;
-    height: 125px;
+    height: 130px;
     grid-template-columns: 110px 1fr;
   }
   .details{
@@ -269,6 +270,7 @@ main{
 
   .product-img{
     width: 100px;
+    height: 115px;
   }
 }
 
@@ -277,7 +279,7 @@ main{
     display: flex;
     flex-direction: column;
     width: 85vw;
-    height: 220px;
+    height: 263px;
   }
   .details{
     max-width: 45vw;

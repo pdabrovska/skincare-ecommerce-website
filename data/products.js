@@ -74,7 +74,7 @@ export const products = [
     price: 1799,
     img: "images/products-images/concealer.jpg",
     badge: 'none',
-    id: 'mmm01',
+    id: 'mmm02',
     section: 'makeup',
   },
   {
