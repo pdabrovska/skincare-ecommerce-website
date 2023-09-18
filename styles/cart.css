@@ -1,0 +1,47 @@
+html{
+  scroll-behavior: smooth;
+  }
+  
+body{
+  font-family: 'Urbanist', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+main{
+  min-height: 91vh;
+  padding-top: 65px;
+  
+}
+
+.empty-cart{
+  text-align: center;
+  margin: 8% 0 10%;
+}
+
+.empty-cart p{
+  margin: 10px 15px;
+}
+
+.empty-cart p:not(:last-child){
+  font-weight: 700;
+}
+
+.empty-cart img{
+  width: 380px;
+  height: auto;
+}
+@media only screen and (max-width: 420px){
+  .empty-cart img{
+    width: 70vw;
+  }
+
+  .empty-cart{
+    font-size: 80%;
+  }
+
+  .empty-cart p{
+    margin: 5px 10px;
+  }
+}

@@ -1,7 +1,9 @@
 import { products } from "../data/products.js";
-import { generateProducts, navbar } from "./utils/general.js";
+import { generateProducts, navbar, updateCartAmount } from "./utils/general.js";
+import { cart } from "../data/cart.js";
 
 navbar();
+updateCartAmount(cart);
 
 //slider
 
@@ -16,7 +18,7 @@ setInterval(()=>{
 
 //products generator
 
-generateProducts(products, 'bestseller');
+generateProducts(products, 'bestseller', 0, 12000, cart);
 
 //product carousel
 const carousel = document.querySelector('.js-products-container');

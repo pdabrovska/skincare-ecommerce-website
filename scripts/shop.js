@@ -1,9 +1,10 @@
-import { navbar, generateProducts } from "./utils/general.js";
+import { navbar, generateProducts, updateCartAmount } from "./utils/general.js";
 import { products } from "../data/products.js";
 import { cart } from "../data/cart.js";
 
 navbar();
 openCloseFilters();
+updateCartAmount(cart);
 
 function whichSection(){
   let section = document.querySelector('input[type=radio]:checked').value;

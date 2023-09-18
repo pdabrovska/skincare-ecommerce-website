@@ -9,15 +9,15 @@ export function navbar(){
     cart.classList.toggle('non-visible');
 
     document.querySelector('.js-about-us').addEventListener('click',()=>{
-      menu.classList.toggle('close-menu');
-      navbar.classList.toggle('open');
-      cart.classList.toggle('non-visible');
+      menu.classList.remove('close-menu');
+      navbar.classList.remove('open');
+      cart.classList.remove('non-visible');
     });
 
     document.querySelector('.js-contact').addEventListener('click',()=>{
-      menu.classList.toggle('close-menu');
-      navbar.classList.toggle('open');
-      cart.classList.toggle('non-visible');
+      menu.classList.remove('close-menu');
+      navbar.classList.remove('open');
+      cart.classList.remove('non-visible');
     });
   }
 };
@@ -147,4 +147,16 @@ function addToCart(productId, cart){
       quantity: 1,
     })
   }
+
+  updateCartAmount(cart);
+  localStorage.setItem('cart', JSON.stringify(cart));
 };
+
+export function updateCartAmount(cart){
+  let cartAmount = 0;
+  cart.forEach(item =>{
+    cartAmount += item.quantity;
+  })
+
+  document.querySelector('.cart-amount').innerHTML = cartAmount;
+}
