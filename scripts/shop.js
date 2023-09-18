@@ -1,5 +1,6 @@
 import { navbar, generateProducts } from "./utils/general.js";
 import { products } from "../data/products.js";
+import { cart } from "../data/cart.js";
 
 navbar();
 openCloseFilters();
@@ -56,7 +57,7 @@ function slideMin(){
   minTooltip.innerHTML = `$${minVal.value}`;
   setArea()
   let section = whichSection();
-  generateProducts(products, section, minVal.value, maxVal.value);
+  generateProducts(products, section, minVal.value, maxVal.value, cart);
 };
 
 function slideMax(){
@@ -68,7 +69,7 @@ function slideMax(){
   maxTooltip.innerHTML = `$${maxVal.value}`;
   setArea()
   let section = whichSection();
-  generateProducts(products, section, minVal.value, maxVal.value);
+  generateProducts(products, section, minVal.value, maxVal.value, cart);
 };
 
 document.querySelector('.min-val').addEventListener('input', ()=>{
@@ -94,7 +95,7 @@ const resetBtn = document.querySelector('.js-reset-btn');
 filterBtn.forEach(button =>{
   button.addEventListener('click', ()=>{
     const checkedFilter = button.value;
-    generateProducts(products, checkedFilter , minVal.value, maxVal.value);
+    generateProducts(products, checkedFilter , minVal.value, maxVal.value, cart);
   });
 });
 
@@ -105,5 +106,5 @@ resetBtn.addEventListener('click', ()=>{
   maxVal.value = 120;
   slideMin();
   slideMax();
-  generateProducts(products, 'every', minVal.value, maxVal.value);
+  generateProducts(products, 'every', minVal.value, maxVal.value, cart);
 });

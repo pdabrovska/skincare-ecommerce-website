@@ -26,7 +26,7 @@ export function formatCurrency(priceCents){
   return (priceCents / 100).toFixed(2);
 }
 
-export function generateProducts(products, whatBadge, minPrice, maxPrice){
+export function generateProducts(products, whatBadge, minPrice, maxPrice, cart){
   const carousel = document.querySelector('.js-products-container');
   let carouselHTML = ''
 
@@ -44,7 +44,7 @@ export function generateProducts(products, whatBadge, minPrice, maxPrice){
           <div class="buy-container">
             <p class="price">$${formatCurrency(price)}</p>
             <button class="js-add-to-cart add-to-cart" data-product-id="${id}">
-              <img src="images/cart-white.png">
+              <img id="js-product-${id}" src="images/cart-white.png">
             </button>
           </div>
         </div>
@@ -64,7 +64,7 @@ export function generateProducts(products, whatBadge, minPrice, maxPrice){
           <div class="buy-container">
             <p class="price">$${formatCurrency(price)}</p>
             <button class="js-add-to-cart add-to-cart" data-product-id="${id}">
-              <img src="images/cart-white.png">
+              <img id="js-product-${id}" src="images/cart-white.png">
             </button>
           </div>
         </div>
@@ -84,7 +84,7 @@ export function generateProducts(products, whatBadge, minPrice, maxPrice){
           <div class="buy-container">
             <p class="price">$${formatCurrency(price)}</p>
             <button class="js-add-to-cart add-to-cart" data-product-id="${id}">
-              <img src="images/cart-white.png">
+              <img id="js-product-${id}" src="images/cart-white.png">
             </button>
           </div>
         </div>
@@ -104,7 +104,7 @@ export function generateProducts(products, whatBadge, minPrice, maxPrice){
           <div class="buy-container">
             <p class="price">$${formatCurrency(price)}</p>
             <button class="js-add-to-cart add-to-cart" data-product-id="${id}">
-              <img src="images/cart-white.png">
+              <img id="js-product-${id}" src="images/cart-white.png">
             </button>
           </div>
         </div>
@@ -116,4 +116,35 @@ export function generateProducts(products, whatBadge, minPrice, maxPrice){
   });
 
   carousel.innerHTML =  carouselHTML;
+
+  document.querySelectorAll('.js-add-to-cart').forEach(button =>{
+    button.addEventListener('click', ()=>{
+      const productId = button.dataset.productId;
+      addToCart(productId, cart);
+    });
+  });
 }
+
+function addToCart(productId, cart){
+  const cartImg =  document.getElementById(`js-product-${productId}`);
+  cartImg.src = "images/cart-white.gif"
+  setTimeout(()=>{
+    cartImg.src = "images/cart-white.png"
+  }, 1100)
+
+  let matchingProduct;
+  cart.forEach(cartProduct => {
+    if(cartProduct.productId === productId){
+      matchingProduct = cartProduct
+    }
+  });
+
+  if(matchingProduct){
+    matchingProduct.quantity++;
+  } else{
+    cart.push({
+      productId,
+      quantity: 1,
+    })
+  }
+};
