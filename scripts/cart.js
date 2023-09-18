@@ -1,19 +1,17 @@
 import { navbar, updateCartAmount, formatCurrency } from "./utils/general.js";
 import { products } from "../data/products.js";
-import { cart } from "../data/cart.js";
+import { cart, deleteProduct } from "../data/cart.js";
 
 navbar();
-updateCartAmount(cart);
-generateCart();
-document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
-updateProductsTotal();
-updateTotal();
+updateCartPage();
 
 
 if(updateCartAmount(cart) !== 0){
   document.querySelector('.empty-cart').classList.add('empty-cart-inactive');
+  document.querySelector('.cart-products-container').classList.add('cart-not-empty');
 } else{
   document.querySelector('.empty-cart').classList.remove('empty-cart-inactive');
+  document.querySelector('.cart-products-container').classList.remove('cart-not-empty');
 }
 
 //generate cart
@@ -54,7 +52,9 @@ function generateCart(){
                 <p>$${formatCurrency(price*quantity)}</p>
               </span>
             </div>
-            <img class="delete-product" src="images/delete-bin.png">
+            <button class="delete-product" data-product-id="${id}">
+              <img src="images/delete-bin.png" >
+            </button>
           </div>
         </div>
         `;
@@ -68,7 +68,15 @@ function generateCart(){
 
   document.querySelectorAll('.delete-product').forEach(button => {
     button.addEventListener('click', ()=>{
-      console.log(0)
+      const productId = button.dataset.productId;
+      deleteProduct(productId);
+      if(updateCartAmount(cart) === 0){
+        document.querySelector('.empty-cart').classList.remove('empty-cart-inactive');
+        document.querySelector('.cart-products-container').classList.remove('cart-not-empty');
+      }else{
+        updateCartPage();
+      }
+
     });
   });
 };
@@ -96,6 +104,10 @@ function updateTotal(){
   document.querySelector('.js-order-total').innerHTML = `$${formatCurrency(total)}`;
 };
 
-function deleteProduct(){
-
-};
+function updateCartPage(){
+  updateCartAmount(cart);
+  generateCart();
+  document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
+  updateProductsTotal();
+  updateTotal();
+}
