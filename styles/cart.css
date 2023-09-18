@@ -72,6 +72,7 @@ main{
 .cart-items{
   max-height: 80vh;
   overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -278,5 +279,12 @@ main{
     right: 0;
     width: 20px;
     cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 720px){
+  .delete-product{
+    right: 0;
+    width: 20px;
   }
 }

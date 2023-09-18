@@ -22,8 +22,8 @@ export function navbar(){
   }
 };
 
-export function formatCurrency(priceCents){
-  return (priceCents / 100).toFixed(2);
+export function formatCurrency(price){
+  return (price / 100).toFixed(2);
 }
 
 export function generateProducts(products, whatBadge, minPrice, maxPrice, cart){
