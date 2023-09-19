@@ -64,3 +64,15 @@ carousel.addEventListener('mouseleave', dragStop);
 carousel.addEventListener('touchstart', dragStart);
 carousel.addEventListener('touchmove', dragging);
 carousel.addEventListener('touchend', dragStop);
+
+document.querySelector('.js-moisturizers-section').addEventListener('click', ()=>{
+  sessionStorage.setItem('section', 'moisturizers');
+});
+
+document.querySelector('.js-body-section').addEventListener('click', ()=>{
+  sessionStorage.setItem('section', 'body');
+});
+
+document.querySelector('.js-serums-section').addEventListener('click', ()=>{
+  sessionStorage.setItem('section', 'serums');
+});

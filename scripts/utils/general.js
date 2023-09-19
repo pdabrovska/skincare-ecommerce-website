@@ -20,6 +20,12 @@ export function navbar(){
       cart.classList.remove('non-visible');
     });
   }
+
+  document.querySelectorAll('.js-icon').forEach(icon =>{
+    icon.addEventListener('click', ()=>{
+      sessionStorage.removeItem('section');
+    });
+  })
 };
 
 export function formatCurrency(price){

@@ -5,10 +5,24 @@ import { cart } from "../data/cart.js";
 navbar();
 openCloseFilters();
 updateCartAmount(cart);
+let isSectionInStorage = true;
 
 function whichSection(){
+  let section;
+  if(isSectionInStorage){
+    let sessionStorageSection = sessionStorage.getItem('section') || 'every';
+    section = sessionStorageSection;
+    document.querySelector(`input[type=radio][id=${section}]`).checked = true;
+    console.log(section)
+  } else{
+    section = document.querySelector('input[type=radio]:checked').value;
+  }
+  
+  return section;
+  /*
   let section = document.querySelector('input[type=radio]:checked').value;
   return section
+  */
 };
 
 function openCloseFilters(){
@@ -95,6 +109,8 @@ const resetBtn = document.querySelector('.js-reset-btn');
 
 filterBtn.forEach(button =>{
   button.addEventListener('click', ()=>{
+    sessionStorage.removeItem('section');
+    isSectionInStorage = false;
     const checkedFilter = button.value;
     generateProducts(products, checkedFilter , minVal.value, maxVal.value, cart);
   });
