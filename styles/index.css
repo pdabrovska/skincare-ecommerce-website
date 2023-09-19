@@ -62,6 +62,11 @@ body{
   margin-top: 8px;
 }
 
+.slide-info button a{
+  color: black;
+  text-decoration: none;
+}
+
 .slide-info button:hover{
   background: rgba(255, 251, 251, 0.841);
   transition: background-color 0.55s ease-out;
