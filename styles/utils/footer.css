@@ -4,6 +4,7 @@ footer{
   padding: 40px 20px;
   justify-content: center;
   gap: 50px;
+  position: relative;
 }
 
 @media only screen and (max-width: 708px){
@@ -114,4 +115,18 @@ form button:hover{
   .contact-info p{
     margin: 5px;
   }
+}
+
+.copyright{
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.copyright img{
+  width: 25px;
 }
