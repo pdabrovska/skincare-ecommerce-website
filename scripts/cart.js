@@ -39,7 +39,7 @@ function generateCart(){
               <span>
                 <form class="quantity-form">
                   <p>Quantity:</p>
-                    <select name="quantity" class="quantity js-quantity-${id}" id="quantity-${id}">
+                    <select name="quantity" class="quantity js-quantity-${id}" id="quantity">
                       <option value="1">1</option>
                       <option value="2">2</option>
                       <option value="3">3</option>
@@ -203,7 +203,7 @@ function selectQuantity(){
     const {productId} = item;
     const itemQuantity = item.quantity;
       document.querySelectorAll(`.js-quantity-${productId}`).forEach(option => {
-        option.addEventListener('touchstart', ()=>{
+        option.addEventListener('touchend', ()=>{
           item.quantity = option.selectedIndex + 1;
           localStorage.setItem('cart', JSON.stringify(cart));
 
