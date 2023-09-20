@@ -151,6 +151,27 @@ function selectQuantity(){
     const {productId} = item;
     const itemQuantity = item.quantity;
       document.querySelectorAll(`.js-quantity-${productId}`).forEach(option => {
+        option.addEventListener('touchstart', ()=>{
+          item.quantity = option.selectedIndex + 1;
+          localStorage.setItem('cart', JSON.stringify(cart));
+
+          
+          if(itemQuantity !== item.quantity){
+            updateCartAmount(cart);
+            document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
+            updateProductsTotal();
+            updateTotal();
+
+            let cartPrice;
+            products.forEach(product =>{
+              if(product.id === productId){
+                cartPrice = product.price;
+              }
+            })
+            document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
+          }
+        });
+
         option.addEventListener('click', ()=>{
           item.quantity = option.selectedIndex + 1;
           localStorage.setItem('cart', JSON.stringify(cart));
@@ -172,26 +193,6 @@ function selectQuantity(){
           }
         });
 
-        option.addEventListener('touchstart', ()=>{
-          item.quantity = option.selectedIndex + 1;
-          localStorage.setItem('cart', JSON.stringify(cart));
-
-          
-          if(itemQuantity !== item.quantity){
-            updateCartAmount(cart);
-            document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
-            updateProductsTotal();
-            updateTotal();
-
-            let cartPrice;
-            products.forEach(product =>{
-              if(product.id === productId){
-                cartPrice = product.price;
-              }
-            })
-            document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
-          }
-        });
       });
   })
 };
