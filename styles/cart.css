@@ -147,6 +147,23 @@ main{
 
 .confirm{
   width: 25px;
+  height: 25px;
+  border: none;
+  background: none;
+  margin-left: -10px;
+  margin-top: -10px;
+}
+
+.confirm:hover{
+  background: none;
+}
+
+.confirm img{
+  width: 25px;
+}
+
+.confirm img:hover{
+  opacity: 0.8;
 }
 
 .quantity-form div{

@@ -61,8 +61,10 @@ function generateCart(){
                       <option value="18">18</option>
                       <option value="19">19</option>
                       <option value="20">20</option>
-                    </select> 
-                    <img class="confirm confirm-${id}" src="images/ok.png">
+                    </select>
+                    <button class="confirm" data-product-id="${id}">
+                      <img src="images/ok.png">
+                    </button>
                   </div>
                 </form>
               </span>
@@ -98,6 +100,24 @@ function generateCart(){
       }
 
     });
+  });
+
+  document.querySelectorAll('.confirm').forEach(confirm => {
+    confirm.addEventListener('click', ()=>{
+      const productId = button.dataset.productId;
+      updateCartAmount(cart);
+      document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
+      updateProductsTotal();
+      updateTotal();
+
+      let cartPrice;
+      products.forEach(product =>{
+        if(product.id === productId){
+          cartPrice = product.price;
+        }
+      })
+      document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
+    })
   });
 
   selectQuantity();
@@ -171,25 +191,10 @@ function selectQuantity(){
             })
             document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
           }
-
-          document.querySelector(`.confirm-${productId}`).addEventListener('click', ()=>{
-            console.log(1);
-            updateCartAmount(cart);
-            document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
-            updateProductsTotal();
-            updateTotal();
-
-            let cartPrice;
-            products.forEach(product =>{
-              if(product.id === productId){
-                cartPrice = product.price;
-              }
-            })
-            document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
-          });
         });
       });
   })
 };
+
 
 

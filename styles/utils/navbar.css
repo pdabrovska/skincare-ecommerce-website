@@ -160,6 +160,7 @@ nav{
   .middle-section{
     z-index: 100;
     min-width: 200px;
+    -webkit-backdrop-filter: blur(15px);
     backdrop-filter: blur(15px);
     padding-top: 30px;
     position: absolute;
