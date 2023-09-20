@@ -154,20 +154,6 @@ function selectQuantity(){
         option.addEventListener('click', ()=>{
           item.quantity = option.selectedIndex + 1;
           localStorage.setItem('cart', JSON.stringify(cart));
-
-          updateCartAmount(cart);
-            document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
-            updateProductsTotal();
-            updateTotal();
-
-            let cartPrice;
-            products.forEach(product =>{
-              if(product.id === productId){
-                cartPrice = product.price;
-              }
-            })
-            document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
-            /*
           if(itemQuantity !== item.quantity){
             updateCartAmount(cart);
             document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
@@ -182,25 +168,8 @@ function selectQuantity(){
             })
             document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
           }
-        });
-        option.addEventListener('touchstart', ()=>{
-          item.quantity = option.selectedIndex + 1;
-          localStorage.setItem('cart', JSON.stringify(cart));
 
-          updateCartAmount(cart);
-            document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
-            updateProductsTotal();
-            updateTotal();
-
-            let cartPrice;
-            products.forEach(product =>{
-              if(product.id === productId){
-                cartPrice = product.price;
-              }
-            })
-            document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
-            /*
-          if(itemQuantity !== item.quantity){
+          document.body.addEventListener('click', ()=>{
             updateCartAmount(cart);
             document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
             updateProductsTotal();
@@ -213,7 +182,7 @@ function selectQuantity(){
               }
             })
             document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
-          }*/
+          })
         });
       });
   })
