@@ -118,7 +118,7 @@ filterBtn.forEach(button =>{
 
 //reset button
 resetBtn.addEventListener('click', ()=>{
-  document.querySelector('input[name="filter-button"][id="all"]').checked = true;
+  document.querySelector('input[name="filter-button"][id="every"]').checked = true;
   minVal.value = 0;
   maxVal.value = 120;
   slideMin();
