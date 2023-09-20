@@ -145,6 +145,15 @@ main{
   max-width: 350px;
 }
 
+.confirm{
+  width: 25px;
+}
+
+.quantity-form div{
+  display: flex;
+  align-items: center;
+}
+
 .quantity-form{
   width: 100%;
   display: flex;

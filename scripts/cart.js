@@ -39,28 +39,31 @@ function generateCart(){
               <span>
                 <form class="quantity-form">
                   <p>Quantity:</p>
-                  <select name="quantity" class="js-quantity-${id}" id="quantity">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                  </select> 
+                  <div>
+                    <select name="quantity" class="js-quantity-${id}" id="quantity">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                      <option value="13">13</option>
+                      <option value="14">14</option>
+                      <option value="15">15</option>
+                      <option value="16">16</option>
+                      <option value="17">17</option>
+                      <option value="18">18</option>
+                      <option value="19">19</option>
+                      <option value="20">20</option>
+                    </select> 
+                    <img class="confirm confirm-${id}" src="images/ok.png">
+                  </div>
                 </form>
               </span>
               <span>
@@ -169,7 +172,8 @@ function selectQuantity(){
             document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
           }
 
-          document.body.addEventListener('click', ()=>{
+          document.querySelector(`.confirm-${productId}`).addEventListener('click', ()=>{
+            console.log(1);
             updateCartAmount(cart);
             document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
             updateProductsTotal();
@@ -182,9 +186,10 @@ function selectQuantity(){
               }
             })
             document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
-          })
+          });
         });
       });
   })
 };
+
 
