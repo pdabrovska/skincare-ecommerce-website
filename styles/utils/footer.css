@@ -118,13 +118,19 @@ form button:hover{
 }
 
 .copyright{
-  color: white;
   position: absolute;
   bottom: 0;
   left: 5px;
   font-size: 12px;
   display: flex;
   align-items: center;
+}
+
+.copyright a{
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
 }
 
 .copyright img{
