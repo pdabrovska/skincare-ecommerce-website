@@ -39,7 +39,6 @@ function generateCart(){
               <span>
                 <form class="quantity-form">
                   <p>Quantity:</p>
-                  <div>
                     <select name="quantity" class="js-quantity-${id}" id="quantity">
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -62,10 +61,6 @@ function generateCart(){
                       <option value="19">19</option>
                       <option value="20">20</option>
                     </select>
-                    <button class="confirm" data-product-id="${id}">
-                      <img src="images/ok.png">
-                    </button>
-                  </div>
                 </form>
               </span>
               <span>
@@ -100,24 +95,6 @@ function generateCart(){
       }
 
     });
-  });
-
-  document.querySelectorAll('.confirm').forEach(confirm => {
-    confirm.addEventListener('click', ()=>{
-      const productId = button.dataset.productId;
-      updateCartAmount(cart);
-      document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
-      updateProductsTotal();
-      updateTotal();
-
-      let cartPrice;
-      products.forEach(product =>{
-        if(product.id === productId){
-          cartPrice = product.price;
-        }
-      })
-      document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
-    })
   });
 
   selectQuantity();
@@ -177,6 +154,29 @@ function selectQuantity(){
         option.addEventListener('click', ()=>{
           item.quantity = option.selectedIndex + 1;
           localStorage.setItem('cart', JSON.stringify(cart));
+
+          
+          if(itemQuantity !== item.quantity){
+            updateCartAmount(cart);
+            document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;
+            updateProductsTotal();
+            updateTotal();
+
+            let cartPrice;
+            products.forEach(product =>{
+              if(product.id === productId){
+                cartPrice = product.price;
+              }
+            })
+            document.querySelector(`.js-product-total-${productId}`).innerHTML = `$${formatCurrency(cartPrice * item.quantity)}`;
+          }
+        });
+
+        option.addEventListener('touchstart', ()=>{
+          item.quantity = option.selectedIndex + 1;
+          localStorage.setItem('cart', JSON.stringify(cart));
+
+          
           if(itemQuantity !== item.quantity){
             updateCartAmount(cart);
             document.querySelector('.js-products-amount').innerHTML = `Products (${updateCartAmount(cart)} items):`;

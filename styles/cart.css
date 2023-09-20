@@ -154,18 +154,6 @@ main{
   margin-top: -10px;
 }
 
-.confirm:hover{
-  background: none;
-}
-
-.confirm img{
-  width: 25px;
-}
-
-.confirm img:hover{
-  opacity: 0.8;
-}
-
 .quantity-form div{
   display: flex;
   align-items: center;
