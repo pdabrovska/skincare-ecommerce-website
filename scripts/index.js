@@ -18,7 +18,7 @@ setInterval(()=>{
 
 //products generator
 
-generateProducts(products, 'bestseller', 0, 12000, cart);
+generateProducts(products, 'js-products-container',  'bestseller', 0, 12000, cart);
 
 //product carousel
 const carousel = document.querySelector('.js-products-container');

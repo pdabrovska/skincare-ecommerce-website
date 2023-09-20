@@ -32,8 +32,8 @@ export function formatCurrency(price){
   return (price / 100).toFixed(2);
 }
 
-export function generateProducts(products, whatBadge, minPrice, maxPrice, cart){
-  const carousel = document.querySelector('.js-products-container');
+export function generateProducts(products, where, whatBadge, minPrice, maxPrice, cart){
+  const carousel = document.querySelector(`.${where}`);
   let carouselHTML = ''
 
   products.forEach(product => {

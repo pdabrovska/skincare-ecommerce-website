@@ -12,6 +12,7 @@ body{
 main{
   min-height: 95vh;
   padding-top: 90px;
+  margin-bottom: 8vh;
 }
 
 .collection{
@@ -20,14 +21,15 @@ main{
   position: relative;
 }
 
-.makeup-collection{
+.serums-collection{
   margin-right: 0;
   margin-left: auto;
+  margin-top: 15vh;
 }
 
 .collection-img{
-  width: 70vw;
-  max-height: 80vh;
+  width: 80vw;
+  max-height: 85vh;
 }
 
 @media only screen and (min-width: 1200px){
@@ -39,11 +41,17 @@ main{
 
 .line-vertical{
   position: absolute;
-  top: 0;
-  bottom: -10%;
+  top: -5%;
+  bottom: -9vh;
   right: -10%;
   width: 2px;
   background-color: gray;
+}
+
+.serums-collection .line-vertical{
+  top: -5%;
+  left: -10%;
+  bottom: -9vh;
 }
 
 .line-horizontal{
@@ -52,7 +60,12 @@ main{
   height: 2px;
   right: -10%;
   left: 10%;
-  bottom: -10%;
+  bottom: -9vh;
+}
+
+.serums-collection .line-horizontal{
+  left: -10%;
+  right: 10%;
 }
 
 /*collection left panel*/
@@ -62,6 +75,10 @@ main{
   right: 0;
   max-width: 37%;
   font-size: 2vw;
+}
+
+.serums-collection .collection-header{
+  left: 15px;
 }
 
 .collection-header p{
@@ -78,10 +95,15 @@ main{
   position: absolute;
   right: 5px;
   bottom: -45px;
-  width: 50%;
+  width: 55%;
   display: flex;
   column-gap: 15px;
   overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+.serums-collection .products-container{
+  left: 5px;
 }
 
 .product-card{
@@ -121,6 +143,10 @@ main{
 }
 
 @media only screen and (min-width: 740px){
+  .collection-img{
+    width: 70vw;
+    max-height: 80vh;
+  }
   .product-card{
     width: 140px;
   }
@@ -214,5 +240,32 @@ main{
 }
 
 @media only screen and (max-width: 380px){
-  
+  .collection-img{
+    width: 95vw;
+    height: auto;
+  }
+
+  .products-container{
+    position: absolute;
+    right: 5px;
+    top: 42%;
+    bottom:auto;
+    width: 60%;
+    display: flex;
+    column-gap: 5px;
+    overflow-x: auto;
+  }
+
+  .line-vertical, .line-horizontal{
+    display: none;
+  }
+
+  main{
+    margin-bottom: 0;
+    min-height: auto;
+  }
+
+  .collection:last-child{
+    margin-bottom: 70px;
+  }
 }

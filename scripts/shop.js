@@ -72,7 +72,7 @@ function slideMin(){
   minTooltip.innerHTML = `$${minVal.value}`;
   setArea()
   let section = whichSection();
-  generateProducts(products, section, minVal.value, maxVal.value, cart);
+  generateProducts(products, 'js-products-container',  section, minVal.value, maxVal.value, cart);
 };
 
 function slideMax(){
@@ -84,7 +84,7 @@ function slideMax(){
   maxTooltip.innerHTML = `$${maxVal.value}`;
   setArea()
   let section = whichSection();
-  generateProducts(products, section, minVal.value, maxVal.value, cart);
+  generateProducts(products, 'js-products-container',  section, minVal.value, maxVal.value, cart);
 };
 
 document.querySelector('.min-val').addEventListener('input', ()=>{
@@ -112,7 +112,7 @@ filterBtn.forEach(button =>{
     sessionStorage.removeItem('section');
     isSectionInStorage = false;
     const checkedFilter = button.value;
-    generateProducts(products, checkedFilter , minVal.value, maxVal.value, cart);
+    generateProducts(products, 'js-products-container', checkedFilter , minVal.value, maxVal.value, cart);
   });
 });
 
@@ -123,5 +123,5 @@ resetBtn.addEventListener('click', ()=>{
   maxVal.value = 120;
   slideMin();
   slideMax();
-  generateProducts(products, 'every', minVal.value, maxVal.value, cart);
+  generateProducts(products, 'js-products-container', 'every', minVal.value, maxVal.value, cart);
 });

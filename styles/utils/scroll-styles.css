@@ -17,3 +17,7 @@
 ::-webkit-scrollbar, ::-webkit-scrollbar-thumb, ::-webkit-scrollbar-thumb:hover{
   width: 12px;
 }
+
+.products-container::-webkit-scrollbar, .products-container::-webkit-scrollbar-thumb, .products-container::-webkit-scrollbar-thumb:hover{
+  height: 6px;
+}
